@@ -20,6 +20,8 @@ ln -sf "/sbin/ip" "/usr/bin/ip"
 if grep -iq "qualcommax" "/etc/openwrt_release"; then
 	sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
 	sed -i "/flow_offloading/d" "/etc/config/firewall"
+
+	/etc/init.d/firewall restart
 fi
 
 exit 0
