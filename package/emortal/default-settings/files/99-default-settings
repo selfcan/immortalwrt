@@ -17,6 +17,9 @@ echo "log-facility=/dev/null" >> "/etc/dnsmasq.conf"
 
 ln -sf "/sbin/ip" "/usr/bin/ip"
 
-sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
+if grep -iq "qualcommax" "/etc/openwrt_release"; then
+	sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
+	sed -i "/flow_offloading/d" "/etc/config/firewall"
+fi
 
 exit 0
