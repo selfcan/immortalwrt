@@ -34,6 +34,6 @@ DEFAULT_PACKAGES += \
 	kmod-qca-nss-drv-vxlanmgr \
 	kmod-qca-nss-drv-wifi-meshmgr \
 	kmod-qca-nss-ecm \
-	kmod-qca-nss-macsec \
+	kmod-qca-nss-macsec
 
 $(eval $(call BuildTarget))
