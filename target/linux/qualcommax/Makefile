@@ -13,7 +13,7 @@ KERNEL_PATCHVER:=6.6
 include $(INCLUDE_DIR)/target.mk
 DEFAULT_PACKAGES += \
 	autocore cpufreq e2fsprogs losetup uboot-envtools wpad-openssl \
-	kmod-ath11k-ahb kmod-fs-ext4 kmod-gpio-button-hotplug kmod-leds-gpio kmod-usb3 kmod-usb-dwc3 kmod-usb-dwc3-qcom \
+	kmod-ath11k kmod-ath11k-ahb kmod-ath11k-pci kmod-fs-ext4 kmod-gpio-button-hotplug kmod-leds-gpio kmod-usb3 kmod-usb-dwc3 kmod-usb-dwc3-qcom \
 	kmod-qca-nss-dp \
 	kmod-qca-nss-drv \
 	kmod-qca-nss-drv-bridge-mgr \
