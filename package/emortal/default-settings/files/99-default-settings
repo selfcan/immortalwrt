@@ -17,11 +17,10 @@ echo "log-facility=/dev/null" >> "/etc/dnsmasq.conf"
 
 ln -sf "/sbin/ip" "/usr/bin/ip"
 
-if grep -iq "qualcommax" "/etc/openwrt_release"; then
-	sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
-	sed -i "/flow_offloading/d" "/etc/config/firewall"
+[ -f "/etc/99-distfeeds.conf" ] && mv "/etc/99-distfeeds.conf" "/etc/opkg/distfeeds.conf"
+sed -ri "/check_signature/s@^[^#]@#&@" "/etc/opkg.conf"
 
-	/etc/init.d/firewall restart
-fi
+uci set firewall.@defaults[0].flow_offloading="0"
+uci commit firewall
 
 exit 0
