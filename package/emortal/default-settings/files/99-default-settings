@@ -17,4 +17,6 @@ echo "log-facility=/dev/null" >> "/etc/dnsmasq.conf"
 
 ln -sf "/sbin/ip" "/usr/bin/ip"
 
+sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
+
 exit 0
