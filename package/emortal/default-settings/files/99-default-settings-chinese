@@ -28,5 +28,6 @@ if [ -z "$opkg_mirror" ]; then
 fi
 
 sed -i.bak "s,https://downloads.immortalwrt.org,$opkg_mirror,g" "/etc/opkg/distfeeds.conf"
+sed -i "/core/d; /nss/d" "/etc/opkg/distfeeds.conf"
 
 exit 0
